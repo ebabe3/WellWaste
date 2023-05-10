@@ -13,8 +13,6 @@ export default function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {};
-
   const navigation = useNavigation();
 
   return (
@@ -39,10 +37,10 @@ export default function Login() {
       />
       <TouchableOpacity
         style={styles.button}
-        onPress={navigation.navigate('Main')}>
+        onPress={() => navigation.navigate('Main')}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={navigation.navigate('Register')}>
+      <TouchableOpacity onPress={() => navigation.navigate('Register')}>
         <Text style={{marginTop: 20, color: 'gray'}}>Sign Up </Text>
       </TouchableOpacity>
     </View>
@@ -54,6 +52,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#fff',
   },
   input: {
     width: '80%',

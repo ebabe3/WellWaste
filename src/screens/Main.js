@@ -62,7 +62,7 @@ export default function Main() {
         </Text>
       </TouchableOpacity>
       <Image
-        source={require('./map.png')}
+        source={require('../../map.png')}
         style={{width: 400, height: 550, marginBottom: 50}}
       />
     </View>
@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#fff',
   },
   input: {
     width: '80%',
