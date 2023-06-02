@@ -18,8 +18,8 @@ export default function Login() {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../../logo.png')}
-        style={{width: 200, height: 150, marginBottom: 50}}
+        source={require('../assets/logo.png')}
+        style={{width: 200, height: 150, marginBottom: 30}}
       />
 
       <TextInput
@@ -36,12 +36,27 @@ export default function Login() {
         value={password}
       />
       <TouchableOpacity
-        style={styles.button}
+        style={{
+          backgroundColor: '#009900',
+          width: 250,
+          height: 40,
+          borderRadius: 20,
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginBottom: 10,
+          opacity: 0.9,
+        }}
         onPress={() => navigation.navigate('Main')}>
-        <Text style={styles.buttonText}>Login</Text>
+        <Text style={{fontSize: 15, fontWeight: 'bold', color: '#fff'}}>
+          Log ın
+        </Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('Register')}>
-        <Text style={{marginTop: 20, color: 'gray'}}>Sign Up </Text>
+
+      <TouchableOpacity
+        onPress={() => navigation.navigate('ForgotPassword')}
+        style={{flexDirection: 'row', marginTop: 20}}>
+        <Text style={{marginTop: 20, color: 'black'}}>Need Help? </Text>
+        <Text style={{marginTop: 20, color: 'gray'}}>Forgot Password </Text>
       </TouchableOpacity>
     </View>
   );
@@ -52,27 +67,27 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: '#eeeeee',
   },
   input: {
     width: '80%',
-    height: 50,
+    height: 40,
     backgroundColor: '#fff',
-    borderRadius: 5,
+    borderRadius: 10,
     padding: 10,
     marginBottom: 10,
   },
   button: {
-    width: '80%',
+    width: '70%',
     height: 50,
-    backgroundColor: '#007bff',
-    borderRadius: 5,
+    backgroundColor: '#3ab3fd',
+    borderRadius: 14,
     alignItems: 'center',
     justifyContent: 'center',
   },
   buttonText: {
     color: '#fff',
-    fontSize: 18,
+    fontSize: 13,
     fontWeight: 'bold',
   },
 });

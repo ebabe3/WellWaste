@@ -21,7 +21,7 @@ export default function Register() {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../../logo.png')}
+        source={require('../assets/logo.png')}
         style={{width: 200, height: 150, marginBottom: 50}}
       />
 

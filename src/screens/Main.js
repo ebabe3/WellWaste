@@ -22,11 +22,11 @@ export default function Main() {
     <View style={styles.container}>
       <View style={{flexDirection: 'row'}}>
         <Image
-          source={require('../../food.png')}
+          source={require('../assets/food.png')}
           style={{width: 200, height: 200, marginBottom: 10, marginTop: 120}}
         />
         <Image
-          source={require('../../food.png')}
+          source={require('../assets/food.png')}
           style={{width: 200, height: 200, marginBottom: 10, marginTop: 120}}
         />
       </View>
@@ -42,7 +42,7 @@ export default function Main() {
           Getir
         </Text>
         <Image
-          source={require('../../getir.png')}
+          source={require('../assets/getir.png')}
           style={{width: 50, height: 50, marginBottom: 10, marginTop: 10}}
         />
       </View>
@@ -62,7 +62,7 @@ export default function Main() {
         </Text>
       </TouchableOpacity>
       <Image
-        source={require('../../map.png')}
+        source={require('../assets/map.png')}
         style={{width: 400, height: 550, marginBottom: 50}}
       />
     </View>
