@@ -5,6 +5,9 @@ import Login from '../screens/Login';
 import Register from '../screens/Register';
 import Main from '../screens/Main';
 import WarehouseList from '../screens/WarehouseList';
+import KitchenList from '../screens/KitchenList';
+import KitchenProfile from '../screens/KitchenProfile';
+import Food from '../screens/Food';
 
 function LoginStack() {
   const Stack = createNativeStackNavigator();
@@ -32,6 +35,22 @@ function LoginStack() {
         component={WarehouseList}
         options={{headerShown: false}}
       />
+      <Stack.Screen
+        name="KitchenList"
+        component={KitchenList}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="KitchenProfile"
+        component={KitchenProfile}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Food"
+        component={Food}
+        options={{headerShown: false}}
+      />
+
     </Stack.Navigator>
   );
 }

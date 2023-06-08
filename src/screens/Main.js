@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React, {useState} from 'react';
 import {
   StyleSheet,
@@ -7,6 +8,8 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native';
+import SliderComponent from '../components/sliderComponent';
+
 
 export default function Main() {
   const [username, setUsername] = useState('');
@@ -14,57 +17,35 @@ export default function Main() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
+  const navigation = useNavigation()
+
   const handleRegister = () => {
     // burada kullanıcının kayıt olmasını sağlamak için gerekli işlemleri gerçekleştirebilirsiniz
   };
 
   return (
     <View style={styles.container}>
-      <View style={{flexDirection: 'row'}}>
+      <SliderComponent />
+      <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('KitchenList')}>
         <Image
-          source={require('../assets/food.png')}
-          style={{width: 200, height: 200, marginBottom: 10, marginTop: 120}}
+          style={styles.image}
+          source={ require('../assets/order.png')}
         />
-        <Image
-          source={require('../assets/food.png')}
-          style={{width: 200, height: 200, marginBottom: 10, marginTop: 120}}
-        />
-      </View>
-      <View style={{flexDirection: 'row'}}>
-        <Text
-          style={{
-            fontSize: 30,
-            marginBottom: 10,
-            marginTop: 10,
-            color: '#6F23FF',
-            fontWeight: 'bold',
-          }}>
-          Getir
+        <View style={{flex: 1, paddingHorizontal: 10}}>
+        <Text style={styles.title}>
+          Mutfaklar
         </Text>
-        <Image
-          source={require('../assets/getir.png')}
-          style={{width: 50, height: 50, marginBottom: 10, marginTop: 10}}
-        />
-      </View>
-      <View style={styles.card}>
-        <View style={styles.content}>
-          <Text style={styles.title}> Detail</Text>
-          <Text style={styles.description}>
-            {' '}
-            There are 20 daily package meals.
-          </Text>
+        <Text style={styles.description}>
+          Mutfaklarımızda bulunan yemekleri inceleyebilirsiniz. Ayrıca yemeklerin içeriklerini, kalitesini ve stok durumunu görebilirsiniz.
+        </Text>
         </View>
-      </View>
-
-      <TouchableOpacity style={styles.button} onPress={handleRegister}>
-        <Text style={styles.buttonText}>
-          The address where you will receive the packages
-        </Text>
       </TouchableOpacity>
-      <Image
-        source={require('../assets/map.png')}
-        style={{width: 400, height: 550, marginBottom: 50}}
-      />
+      <View style={styles.card}>
+        <Image
+          style={styles.image}
+          source={ require('../assets/depo.png')}
+        />
+      </View>
     </View>
   );
 }
@@ -75,6 +56,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#fff',
+    marginBottom: 90,
   },
   input: {
     width: '80%',
@@ -97,27 +79,26 @@ const styles = StyleSheet.create({
 
     marginBottom: 10,
   },
-
   card: {
-    backgroundColor: '#fff',
     borderRadius: 10,
+    padding: 10,
+    width: '90%',
+    marginTop: 20,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 2,
+      height: 0.5,
     },
     shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    shadowRadius: 3.5,
     elevation: 5,
-    marginVertical: 10,
-    marginHorizontal: 20,
-    flexDirection: 'row',
-    alignItems: 'center',
-    overflow: 'hidden',
+    backgroundColor: '#fff',
+    flexDirection : 'row',
   },
   image: {
-    width: 100,
-    height: '100%',
+    width: 150,
+    height: 100,
+    borderRadius: 5,
   },
   content: {
     flex: 1,
@@ -127,8 +108,11 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 5,
+    color: 'gray',
   },
   description: {
-    fontSize: 14,
+    fontSize: 12,
+    color: 'gray',
+    width: 180,
   },
 });
