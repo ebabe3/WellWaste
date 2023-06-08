@@ -33,10 +33,7 @@ export default function Main() {
         />
         <View style={{flex: 1, paddingHorizontal: 10}}>
         <Text style={styles.title}>
-          Mutfaklar
-        </Text>
-        <Text style={styles.description}>
-          Mutfaklarımızda bulunan yemekleri inceleyebilirsiniz. Ayrıca yemeklerin içeriklerini, kalitesini ve stok durumunu görebilirsiniz.
+          Restorantlar
         </Text>
         </View>
       </TouchableOpacity>
@@ -49,9 +46,7 @@ export default function Main() {
           <Text style={styles.title}>
             Depolar
           </Text>
-          <Text style={styles.description}>
-            Depolarımızda bulunan ürünleri inceleyebilirsiniz. Ayrıca ürünlerin içeriklerini, kalitesini ve stok durumunu görebilirsiniz.
-          </Text>
+         
         </View>
       </TouchableOpacity>
     </View>
