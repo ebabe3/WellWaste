@@ -40,12 +40,20 @@ export default function Main() {
         </Text>
         </View>
       </TouchableOpacity>
-      <View style={styles.card}>
+      <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('WarehouseList')}>
         <Image
           style={styles.image}
           source={ require('../assets/depo.png')}
         />
-      </View>
+        <View style={{flex: 1, paddingHorizontal: 10}}>
+          <Text style={styles.title}>
+            Depolar
+          </Text>
+          <Text style={styles.description}>
+            Depolarımızda bulunan ürünleri inceleyebilirsiniz. Ayrıca ürünlerin içeriklerini, kalitesini ve stok durumunu görebilirsiniz.
+          </Text>
+        </View>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -56,7 +64,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#fff',
-    marginBottom: 90,
+    paddingBottom: 50,
   },
   input: {
     width: '80%',

@@ -5,15 +5,15 @@ import Swiper from 'react-native-swiper';
 const SliderComponent = () => {
   const slides = [
     {
-      image: require('../assets/food.png'),
-      text: 'Kampanya 1',
+      image: require('../assets/slider1.png'),
+      text: 'Combine surplus with social responsibility.',
     },
     {
-        image: require('../assets/food.png'),
-        text: 'Kampanya 2',
+        image: require('../assets/slider3.png'),
+        text: 'Recycling for a sustainable future.',
     },
     {
-        image: require('../assets/food.png'),
+        image: require('../assets/slider2.png'),
         text: 'Kampanya 3',
     },
   ];
@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'white',
     padding: 20,
+    paddingBottom: 60
   },
 });
 

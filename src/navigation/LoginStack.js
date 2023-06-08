@@ -8,6 +8,7 @@ import WarehouseList from '../screens/WarehouseList';
 import KitchenList from '../screens/KitchenList';
 import KitchenProfile from '../screens/KitchenProfile';
 import Food from '../screens/Food';
+import WarehouseProfile from '../screens/WarehouseProfile';
 
 function LoginStack() {
   const Stack = createNativeStackNavigator();
@@ -50,7 +51,11 @@ function LoginStack() {
         component={Food}
         options={{headerShown: false}}
       />
-
+      <Stack.Screen
+        name="WarehouseProfile"
+        component={WarehouseProfile}
+        options={{headerShown: false}}
+      />
     </Stack.Navigator>
   );
 }
