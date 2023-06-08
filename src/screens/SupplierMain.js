@@ -11,7 +11,7 @@ import {
 import SliderComponent from '../components/sliderComponent';
 
 
-export default function Main() {
+export default function SupplierMain() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

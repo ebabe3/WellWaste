@@ -44,7 +44,7 @@ const Onboard = () => {
         <View>
           <TouchableOpacity
             style={{
-              backgroundColor: '#009900',
+              backgroundColor: '#3fb6fc',
               width: 250,
               height: 40,
               borderRadius: 20,

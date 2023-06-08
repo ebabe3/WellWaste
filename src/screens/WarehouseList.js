@@ -65,7 +65,7 @@ const WarehouseList = () => {
 
     return (
         <View style={styles.container}>
-            <Text style={{ fontSize: 20, fontWeight: "bold", marginTop: 60, marginLeft: 30, color: 'gray'}}>Depolarımız</Text>
+            <Text style={{ fontSize: 20, fontWeight: "bold", marginTop: 60, marginLeft: 30, color: 'gray'}}>Warehouses</Text>
             <FlatList   
                 data={data}
                 renderItem={({ item }) => <Item name={item.name} image={item.image} />}

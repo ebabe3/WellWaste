@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React, {useState} from 'react';
 import {
   StyleSheet,
@@ -13,16 +14,32 @@ export default function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  
+  const navigation = useNavigation()
 
   const handleRegister = () => {
     // burada kullanıcının kayıt olmasını sağlamak için gerekli işlemleri gerçekleştirebilirsiniz
   };
 
+  const [isVakifSelected, setIsVakifSelected] = useState(false);
+  const [isTedarikciSelected, setIsTedarikciSelected] = useState(false);
+
+  const handleVakifPress = () => {
+    setIsVakifSelected(true);
+    setIsTedarikciSelected(false);
+  };
+
+  const handleTedarikciPress = () => {
+    setIsVakifSelected(false);
+    setIsTedarikciSelected(true);
+  };
+
+
   return (
     <View style={styles.container}>
       <Image
         source={require('../assets/logo.png')}
-        style={{width: 200, height: 150, marginBottom: 50}}
+        style={{width: 450, height: 200, marginBottom: 30}}
       />
 
       <TextInput
@@ -61,8 +78,53 @@ export default function Register() {
         onChangeText={text => setConfirmPassword(text)}
         value={confirmPassword}
       />
-      <TouchableOpacity style={styles.button} onPress={handleRegister}>
-        <Text style={styles.buttonText}>Register</Text>
+      <View style={{ flexDirection: 'row', width: '60%', justifyContent: 'space-between', marginBottom: 20 }}>
+  <TouchableOpacity
+    style={[
+      styles.button,
+      isVakifSelected && styles.selectedButton,
+    ]}
+    onPress={handleVakifPress}
+  >
+    <Text style={[
+      styles.buttonText,
+      isVakifSelected && styles.selectedButtonText,
+    ]}>
+      Vakıf
+    </Text>
+  </TouchableOpacity>
+  <TouchableOpacity
+    style={[
+      styles.button,
+      isTedarikciSelected && styles.selectedButton,
+    ]}
+    onPress={handleTedarikciPress}
+  >
+    <Text style={[
+      styles.buttonText,
+      isTedarikciSelected && styles.selectedButtonText,
+    ]}>
+      Tedarikçi
+    </Text>
+  </TouchableOpacity>
+</View>
+
+      <TouchableOpacity
+        style={{
+          backgroundColor: '#3fb6fc',
+          width: 250,
+          height: 40,
+          borderRadius: 20,
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginBottom: 10,
+          opacity: 0.9,
+        }}
+        onPress={ 
+          () => isTedarikciSelected ? navigation.navigate('SupplierMain') : navigation.navigate('Main')}>
+        <Text style={{fontSize: 15, fontWeight: 'bold', color: '#fff'}}>
+          Sign Up
+        </Text>
       </TouchableOpacity>
     </View>
   );
@@ -84,15 +146,33 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   button: {
-    width: '80%',
+    width: '45%',
     height: 50,
-    backgroundColor: '#007bff',
+    backgroundColor: '#fff',
     borderRadius: 5,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 40,
+    marginTop: 10,
+    borderWidth: 0.5,
+    borderColor: '#3fb6fc'
   },
   buttonText: {
+    color: '#3fb6fc',
+    fontSize: 15,
+    fontWeight: 'bold',
+  },
+  selectedButton: {
+    width: '45%',
+    height: 50,
+    backgroundColor: '#3fb6fc',
+    borderRadius: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 10,
+    borderWidth: 0.5,
+    borderColor: '#3fb6fc'
+  },
+  selectedButtonText: {
     color: '#fff',
     fontSize: 15,
     fontWeight: 'bold',

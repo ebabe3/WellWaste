@@ -13,23 +13,23 @@ const KitchenProfile = () => {
             image: require("../assets/food.png"),
             description: "Muftak bilgileri",
             stock: "Stokta",
-            stockNumber: 10,
+            stockNumber: 9,
         },
         {
             id: 2,
             name: "Tabildot Yemek Menüsü 2",
-            image: require("../assets/food.png"),
+            image: require("../assets/food1.png"),
             description: "Muftak bilgileri",
             stock: "Stokta",
-            stockNumber: 10,
+            stockNumber: 19,
         },
         {
             id: 3,
             name: "Tabildot Yemek Menüsü 3",
-            image: require("../assets/food.png"),
+            image: require("../assets/food2.png"),
             description: "Muftak bilgileri",
             stock: "Stokta",
-            stockNumber: 10,
+            stockNumber: 16,
         },
         {
             id: 4,
@@ -37,17 +37,20 @@ const KitchenProfile = () => {
             image: require("../assets/food.png"),
             description: "Muftak bilgileri",
             stock: "Stokta",
-            stockNumber: 10,
+            stockNumber: 2,
         },
     ];
 
-    const Item = ({ name, image, description, stock, stockNumber }) => (
+    const Item = ({ name, image, stock, stockNumber }) => (
         <TouchableOpacity style={styles.card} onPress={() => navigation.navigate("Food")}>
             <Image style={{height: 100, width: 100,borderRadius: 10}} source={image} />
             <View style={{ justifyContent: "center", marginLeft: 20 }}>
                 <Text style={{ fontSize: 12, fontWeight: "bold" }}>{name}</Text>
-                <Text style={{ fontSize: 11, color: "gray" }}>{stock}</Text>
-                <Text style={{ fontSize: 11, color: "gray" }}>Ürün adeti: {stockNumber}</Text>
+                <Text style={{ fontSize: 11, color: "green" }}>{stock}</Text>
+                <View style={{flexDirection : 'row'}}>
+                <Text style={{ fontSize: 14, color: "gray" }}>Ürün adeti: </Text>
+                <Text style={{ fontSize: 14, color: "green" }}>{stockNumber}</Text>
+                </View>
             </View>
         </TouchableOpacity>
     );
@@ -59,7 +62,7 @@ const KitchenProfile = () => {
         <View>
             <View style={styles.header}>
                 <Image source={require("../assets/restaurantLogo.png")} style={{ width: '100%', height: 290}} />
-                <Text style={styles.name}>Mutfak 1</Text>
+                <Text style={styles.name}>Catering Restaurant</Text>
             </View>
             <FlatList
                 style={{ marginTop: 30 }}

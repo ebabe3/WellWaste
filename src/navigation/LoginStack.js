@@ -9,6 +9,7 @@ import KitchenList from '../screens/KitchenList';
 import KitchenProfile from '../screens/KitchenProfile';
 import Food from '../screens/Food';
 import WarehouseProfile from '../screens/WarehouseProfile';
+import SupplierMain from '../screens/SupplierMain';
 
 function LoginStack() {
   const Stack = createNativeStackNavigator();
@@ -25,7 +26,11 @@ function LoginStack() {
         component={Login}
         options={{headerShown: false}}
       />
-      <Stack.Screen name="Register" component={Register} />
+      <Stack.Screen
+       name="Register" 
+       component={Register} 
+        options={{headerShown: false}}
+      />
       <Stack.Screen
         name="Main"
         component={Main}
@@ -56,6 +61,11 @@ function LoginStack() {
         component={WarehouseProfile}
         options={{headerShown: false}}
       />
+      <Stack.Screen
+         name="SupplierMain"
+         component={SupplierMain}
+         options={{headerShown: false}}
+         />
     </Stack.Navigator>
   );
 }
