@@ -31,9 +31,9 @@ export default function Main() {
           style={styles.image}
           source={ require('../assets/order.png')}
         />
-        <View style={{flex: 1, paddingHorizontal: 10}}>
+        <View style={{flex: 1, paddingHorizontal: 10, alignItems: 'center', justifyContent: 'center' }}>
         <Text style={styles.title}>
-          Restorantlar
+          Restaurants
         </Text>
         </View>
       </TouchableOpacity>
@@ -42,9 +42,9 @@ export default function Main() {
           style={styles.image}
           source={ require('../assets/depo.png')}
         />
-        <View style={{flex: 1, paddingHorizontal: 10}}>
+        <View style={{flex: 1, paddingHorizontal: 10, alignItems: 'center', justifyContent: 'center' }}>
           <Text style={styles.title}>
-            Depolar
+          Warehouses
           </Text>
          
         </View>

@@ -19,7 +19,7 @@ export default function Login() {
     <View style={styles.container}>
       <Image
         source={require('../assets/logo.png')}
-        style={{width: 200, height: 150, marginBottom: 30}}
+        style={{width: 450, height: 200, marginBottom: 30}}
       />
 
       <TextInput
