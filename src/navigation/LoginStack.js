@@ -10,6 +10,8 @@ import KitchenProfile from '../screens/KitchenProfile';
 import Food from '../screens/Food';
 import WarehouseProfile from '../screens/WarehouseProfile';
 import SupplierMain from '../screens/SupplierMain';
+import SurveyPage from '../screens/SurveyPage';
+
 
 function LoginStack() {
   const Stack = createNativeStackNavigator();
@@ -64,6 +66,11 @@ function LoginStack() {
       <Stack.Screen
          name="SupplierMain"
          component={SupplierMain}
+         options={{headerShown: false}}
+         />
+      <Stack.Screen
+         name="SurveyPage"
+         component={SurveyPage}
          options={{headerShown: false}}
          />
     </Stack.Navigator>

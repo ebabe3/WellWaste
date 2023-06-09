@@ -121,7 +121,7 @@ export default function Register() {
           opacity: 0.9,
         }}
         onPress={ 
-          () => isTedarikciSelected ? navigation.navigate('SupplierMain') : navigation.navigate('Main')}>
+          () => isTedarikciSelected ? navigation.navigate('SurveyPage') : navigation.navigate('Main')}>
         <Text style={{fontSize: 15, fontWeight: 'bold', color: '#fff'}}>
           Sign Up
         </Text>

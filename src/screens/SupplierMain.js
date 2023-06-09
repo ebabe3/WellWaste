@@ -4,7 +4,6 @@ import {
   StyleSheet,
   Text,
   View,
-  TextInput,
   TouchableOpacity,
   Image,
 } from 'react-native';
@@ -12,43 +11,22 @@ import SliderComponent from '../components/sliderComponent';
 
 
 export default function SupplierMain() {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-
   const navigation = useNavigation()
-
-  const handleRegister = () => {
-    // burada kullanıcının kayıt olmasını sağlamak için gerekli işlemleri gerçekleştirebilirsiniz
-  };
-
   return (
     <View style={styles.container}>
       <SliderComponent />
-      <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('KitchenList')}>
+      <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('AddFood')}>
         <Image
           style={styles.image}
           source={ require('../assets/order.png')}
         />
         <View style={{flex: 1, paddingHorizontal: 10, alignItems: 'center', justifyContent: 'center' }}>
         <Text style={styles.title}>
-          Restaurants
+          Add Food
         </Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('WarehouseList')}>
-        <Image
-          style={styles.image}
-          source={ require('../assets/depo.png')}
-        />
-        <View style={{flex: 1, paddingHorizontal: 10, alignItems: 'center', justifyContent: 'center' }}>
-          <Text style={styles.title}>
-            Warehouses
-          </Text>
-         
-        </View>
-      </TouchableOpacity>
+
     </View>
   );
 }
@@ -86,7 +64,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 10,
     width: '90%',
-    marginTop: 20,
+    marginTop: 40,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
