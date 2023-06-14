@@ -28,6 +28,9 @@ const Food = ({route, navigation}) => {
   } = route?.params || false;
 
   const userType = useSelector(state => state.SupplierStore.userType);
+  const isExpired = useSelector(
+    state => state.SupplierStore.productInfo?.isExpired,
+  );
   const instets = useSafeAreaInsets();
 
   function getDayDifference(dateString) {
@@ -90,8 +93,7 @@ const Food = ({route, navigation}) => {
                 İçerik:{' '}
               </Text>
               <Text style={{fontSize: 13, color: 'black'}}>
-                Kırmızı mercimek, soğan, havuç, patates, domates, biber,
-                sarımsak, tuz, karabiber, kimyon, zeytinyağı.
+              Governments, businesses, and individuals play vital roles in achieving sustainability through policies, partnerships, and responsible practices.
               </Text>
             </>
           )}
@@ -99,7 +101,9 @@ const Food = ({route, navigation}) => {
             Expiration Date:{' '}
           </Text>
           <Text style={{fontSize: 13, color: 'black'}}>
-            {expireDate
+            {isExpired
+              ? 'Expired'
+              : expireDate
               ? `${expireDate}\n(${getDayDifference(
                   new Date(
                     expireDate
@@ -107,10 +111,10 @@ const Food = ({route, navigation}) => {
                       .replace(/(\d+[/])(\d+[/])/, '$2$1'),
                   ),
                 )} days left) `
-              : '08.06.2023 (Bugün)'}
+              : '08.06.2023 (Today)'}
           </Text>
           <Text style={{fontSize: 13, color: 'gray', paddingTop: 5}}>
-            Isıtılma Durumu:{' '}
+            Heat Situation:{' '}
           </Text>
           <Text style={{fontSize: 13, color: 'black'}}>
             {heatSituation !== undefined
@@ -120,78 +124,68 @@ const Food = ({route, navigation}) => {
                       ? '\n*This item will be forwarded to the compost center if not received within 2 days'
                       : ''
                   }`
-                : 'Isıtılmamış'
-              : 'Çorba, taze olarak servis edildiğinde en iyi tat ve kıvamı sunar. Gerektiğinde hafifçe ısıtılarak servis edilebilir.'}
+                : 'Not Heated'
+              : 'Sustainability is about responsibly using resources to meet present needs without compromising the ability of future generations to meet their own needs. It involves environmental conservation, social equity, and economic development.'}
           </Text>
         </View>
         {!ingredients && (
           <>
             <View style={styles.card}>
               <Text style={{fontSize: 16, color: 'black', fontWeight: '500'}}>
-                Sebzeli Pilav
-              </Text>
-              <Text style={{fontSize: 13, color: 'gray', paddingTop: 5}}>
-                Açıklama:{' '}
-              </Text>
-              <Text style={{fontSize: 13, color: 'black'}}>
-                Sebzeli pilav, leziz ve doyurucu bir seçenektir. İçerisinde
-                bulunan çeşitli sebzeler, pilava zengin bir aroma ve besleyici
-                değer katar. Bu basit ve lezzetli pilav, ana yemeklerle mükemmel
-                bir uyum sağlar.
-              </Text>
-              <Text style={{fontSize: 13, color: 'gray', paddingTop: 5}}>
-                İçerik:{' '}
-              </Text>
-              <Text style={{fontSize: 13, color: 'black'}}>
-                Uzun taneli pirinç, havuç, bezelye, mısır, soğan, sarımsak, tuz,
-                karabiber, sıvı yağ.
-              </Text>
-              <Text style={{fontSize: 13, color: 'gray', paddingTop: 5}}>
-                Expiration Date:{' '}
-              </Text>
-              <Text style={{fontSize: 13, color: 'black'}}>
-                08.06.2023 (Bugün)
-              </Text>
-              <Text style={{fontSize: 13, color: 'gray', paddingTop: 5}}>
-                Isıtılma Durumu:{' '}
-              </Text>
-              <Text style={{fontSize: 13, color: 'black'}}>
-                Pilav, taze olarak servis edildiğinde en iyi tat ve kıvamı
-                sunar. Isıtıldığında da lezzetini korur. Gerektiğinde hafifçe
-                ısıtılarak servis edilebilir.
-              </Text>
-            </View>
-            <View style={styles.card}>
-              <Text style={{fontSize: 16, color: 'black', fontWeight: '500'}}>
-                Mantar Sote
+                Vegetable Pilaf
               </Text>
               <Text style={{fontSize: 13, color: 'gray', paddingTop: 5}}>
                 Description:{' '}
               </Text>
               <Text style={{fontSize: 13, color: 'black'}}>
-                Leziz mantarlar taze baharatlar ve özel sos ile sotelenmiştir.
-                Mantar sote, hafif ve doyurucu bir seçenektir ve klasik bir
-                lezzet sunar.
+              Sustainability is a concept that relates to the responsible and balanced use of resources to meet the needs of the present generation without compromising the ability of future generations to meet their own needs.
               </Text>
               <Text style={{fontSize: 13, color: 'gray', paddingTop: 5}}>
-                İçerik:{' '}
+                Content:{' '}
               </Text>
               <Text style={{fontSize: 13, color: 'black'}}>
-                İnce dilimlenmiş mantarlar, soğan, sarımsak, taze kekik,
-                zeytinyağı, tuz, karabiber.
+              Environmental sustainability focuses on preserving and protecting the natural environment and its resources. It involves reducing waste, minimizing pollution, conserving energy and water, protecting biodiversity, and promoting renewable and clean energy sources.
               </Text>
               <Text style={{fontSize: 13, color: 'gray', paddingTop: 5}}>
                 Expiration Date:{' '}
               </Text>
               <Text style={{fontSize: 13, color: 'black'}}>
-                08.06.2023 (Bugün)
+                08.06.2023 (Today)
               </Text>
               <Text style={{fontSize: 13, color: 'gray', paddingTop: 5}}>
-                Isıtılma Durumu:{' '}
+                Heat Situation:{' '}
               </Text>
               <Text style={{fontSize: 13, color: 'black'}}>
-                Mantar sote, taze olarak servis edildiğinde en iyi tadı verir.
-                Gerektiğinde hafifçe ısıtılarak servis edilebilir.
+              Environmental sustainability focuses on preserving and protecting the natural environment and its resources. It involves reducing waste, minimizing pollution, conserving energy and water, protecting biodiversity, and promoting renewable and clean energy sources.
+              </Text>
+            </View>
+            <View style={styles.card}>
+              <Text style={{fontSize: 16, color: 'black', fontWeight: '500'}}>
+                Mushroom 
+              </Text>
+              <Text style={{fontSize: 13, color: 'gray', paddingTop: 5}}>
+                Description:{' '}
+              </Text>
+              <Text style={{fontSize: 13, color: 'black'}}>
+              Social sustainability recognizes that a sustainable future requires addressing social issues and improving the well-being of people.
+              </Text>
+              <Text style={{fontSize: 13, color: 'gray', paddingTop: 5}}>
+                Content:{' '}
+              </Text>
+              <Text style={{fontSize: 13, color: 'black'}}>
+              Economic sustainability involves developing and maintaining a robust economy that supports long-term prosperity while considering environmental and social factors.
+              </Text>
+              <Text style={{fontSize: 13, color: 'gray', paddingTop: 5}}>
+                Expiration Date:{' '}
+              </Text>
+              <Text style={{fontSize: 13, color: 'black'}}>
+                08.06.2023 (Today)
+              </Text>
+              <Text style={{fontSize: 13, color: 'gray', paddingTop: 5}}>
+                Heat Situation:{' '}
+              </Text>
+              <Text style={{fontSize: 13, color: 'black'}}>
+              Sustainability is not limited to any specific sector or industry but encompasses a wide range of areas, including agriculture, energy, transportation, construction, manufacturing, and more.
               </Text>
             </View>
           </>

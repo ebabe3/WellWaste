@@ -124,7 +124,7 @@ export default function Register() {
                 styles.buttonText,
                 isVakifSelected && styles.selectedButtonText,
               ]}>
-              Local Charitiess
+              Local Charities
             </Text>
           </TouchableOpacity>
           <TouchableOpacity

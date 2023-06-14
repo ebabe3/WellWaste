@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {StyleSheet, View, Text, TouchableOpacity, Image} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import {useIsFocused, useNavigation} from '@react-navigation/native';
 import {useDispatch, useSelector} from 'react-redux';
 import {SupplierActions} from '../redux/reducers/SupplierStore';
 import {SafeAreaView, useSafeAreaInsets} from 'react-native-safe-area-context';
@@ -11,7 +11,7 @@ export default function SurveyPage() {
   const navigation = useNavigation();
   const dispatch = useDispatch();
   const answers = useSelector(state => state.SupplierStore.productInfo);
-
+  const isFocused = useIsFocused();
   const questions = [
     {
       question: 'What is the type of food?',
@@ -81,7 +81,7 @@ export default function SurveyPage() {
       question: 'Has your product been heated?',
       options: [
         {
-          title: 'Evet',
+          title: 'Yes',
           onPress: () => {
             setQuestionIndex(3);
             dispatch(
@@ -93,9 +93,9 @@ export default function SurveyPage() {
           },
         },
         {
-          title: 'Hayır',
+          title: 'No',
           onPress: () => {
-            navigation.navigate('');
+            navigation.navigate('AddProduct');
             dispatch(
               SupplierActions.updateProductInfo({
                 key: 'isHeated',
@@ -137,6 +137,12 @@ export default function SurveyPage() {
       ],
     },
   ];
+
+  useEffect(() => {
+    if (isFocused) {
+      setQuestionIndex(0);
+    }
+  }, [isFocused]);
 
   const renderQuestion = (question, options, image) => {
     return (
